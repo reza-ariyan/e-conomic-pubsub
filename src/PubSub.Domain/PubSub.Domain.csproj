@@ -7,11 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="EasyNetQ" Version="6.4.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="EventBus\Distributed" />
+      <ProjectReference Include="..\PubSub.Core\PubSub.Core.csproj" />
     </ItemGroup>
 
 </Project>
