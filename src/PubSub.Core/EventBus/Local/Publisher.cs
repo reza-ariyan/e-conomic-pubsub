@@ -1,14 +1,22 @@
+using PubSub.Core.EventBus.Local.Contracts;
+
 namespace PubSub.Core.EventBus.Local;
 
-public class Publisher
+///<inheritdoc/>
+public class Publisher : IPublisher
 {
-    private readonly LocalEventBus _localEventBus;
+    private readonly ILocalEventBus _localEventBus;
 
-    public Publisher(LocalEventBus localEventBus)
+    /// <summary>
+    /// Create a new instance of publisher by injecting a LocalEventBus
+    /// </summary>
+    /// <param name="localEventBus">A local event bus (an implementation of<see cref="ILocalEventBus"/>)</param>
+    public Publisher(ILocalEventBus localEventBus)
     {
         _localEventBus = localEventBus;
     }
 
+    ///<inheritdoc/>
     public void Publish<TMessage>(TMessage message)
     {
         _localEventBus.Publish(message);

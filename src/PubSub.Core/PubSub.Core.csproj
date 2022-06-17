@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="EventBus\Distributed" />
+      <Folder Include="EventBus\Distributed\Contracts" />
     </ItemGroup>
 
 </Project>
