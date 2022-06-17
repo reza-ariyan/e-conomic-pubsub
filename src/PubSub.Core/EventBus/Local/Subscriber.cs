@@ -29,19 +29,9 @@ public abstract class Subscriber<TMessage> : IDisposable
     /// <param name="message"><typeparam name="TMessage"/> is the type of the message that is arisen or published</param>
     protected abstract void Notify(TMessage message);
 
-
-    /// <summary>
-    /// Unsubscribe
-    /// </summary>
-    public void Unsubscribe()
-    {
-        _localEventBus.Unsubscribe(_subscription);
-    }
-
     ///<inheritdoc/>
     void IDisposable.Dispose()
     {
-        Unsubscribe();
         _subscription.Dispose();
     }
 }
