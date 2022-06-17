@@ -7,11 +7,11 @@ namespace PubSub.Domain.EventBus.Subscribers;
 
 public class AppleSubscriber : Subscriber<Apple>, IAppleSubscriber
 {
-    public AppleSubscriber(ILocalEventBus eve) : base(eve)
+    public AppleSubscriber(ILocalEventBus bus) : base(bus)
     {
     }
 
-    protected override void Notify(Apple message)
+    public override void Notify(Apple message)
     {
         Console.WriteLine($"{message.Symbol,-5}-->{message.Name,7} new price is {message.Price}");
     }

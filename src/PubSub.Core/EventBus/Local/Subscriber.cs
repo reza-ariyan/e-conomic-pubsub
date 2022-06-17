@@ -25,7 +25,7 @@ public abstract class Subscriber<TMessage> : IDisposable
     /// </summary>
     /// <remarks>When you publish a message through a publisher, all subscribers will get notified and their <see cref="Notify"/> action will be called</remarks>
     /// <param name="message"><typeparam name="TMessage"/> is the type of the message that is arisen or published</param>
-    protected abstract void Notify(TMessage message);
+    public abstract void Notify(TMessage message);
 
     ///<inheritdoc/>
     void IDisposable.Dispose()

@@ -26,4 +26,10 @@
       <ProjectReference Include="..\..\src\PubSub.Core\PubSub.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="PubSub.Core">
+        <HintPath>..\..\src\PubSub.Application\bin\Debug\net6.0\PubSub.Core.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
