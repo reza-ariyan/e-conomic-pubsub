@@ -10,7 +10,6 @@ namespace PubSub.Core.EventBus.Local;
 public abstract class Subscriber<TMessage> : IDisposable
 {
     private readonly Subscription<TMessage> _subscription;
-    private readonly ILocalEventBus _localEventBus;
 
     /// <summary>
     /// Create a new instance of subscriber by injecting a LocalEventBus
@@ -18,7 +17,6 @@ public abstract class Subscriber<TMessage> : IDisposable
     /// <param name="localEventBus"><inheritdoc cref="ILocalEventBus"/></param>
     protected Subscriber(ILocalEventBus localEventBus)
     {
-        _localEventBus = localEventBus;
         _subscription = localEventBus.Subscribe<TMessage>(Notify);
     }
 
