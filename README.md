@@ -44,7 +44,7 @@ reference [PubSub.Core](src/PubSub.Core), then create your models as described b
       }
   }
   ```
-- After all to activate the subscriber you can create a new instance of ``MyFirstPublicChatSubscriber``, in this way
+- After all to activate the subscriber you can create a new instance of it (in this example instance of ``MyFirstPublicChatSubscriber``), in this way
   subscriber will automatically be activated.
   ```csharp
   var localEventBus = new LocalEventBus();
