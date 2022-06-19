@@ -44,7 +44,7 @@ reference [PubSub.Core](src/PubSub.Core), then create your models as described b
       }
   }
   ```
-- After all to activate the subscriber you can create a new instance of ``MyFirstPublicChatSubscriber``, in this way
+- After all to activate the subscriber you can create a new instance of it (in this example instance of ``MyFirstPublicChatSubscriber``), in this way
   subscriber will automatically be activated.
   ```csharp
   var localEventBus = new LocalEventBus();
@@ -83,9 +83,10 @@ There is another easy way to subscribe to a message using `dependency injection`
       }
   }
   ```
-- Final step is injecting IMyFirstPublicChatSubscriber, after injection it will automatically subscribe.
-  for example you can use code below to inject IMyFirstPublicChatSubscriber in your API project:
+- Final step is injecting the subscriber class (`IMyFirstPublicChatSubscriber`), after injection it will automatically subscribe.
+  for example you can use code below to inject `IMyFirstPublicChatSubscriber` in your API project:
   ```csharp
+  //You can add Transient, Scoped, or Singleton, depending on your needs
   services.AddSingleton<IMyFirstPublicChatSubscriber, MyFirstPublicChatSubscriber>();
   ```
   ##### You can also inject a publisher like below:
@@ -96,7 +97,7 @@ There is another easy way to subscribe to a message using `dependency injection`
 ## Final Note
 
 There is a sample project named [PubSub.Application](src/PubSub.Application) that is a simple implementation
-of [PubSub.Core](src/PubSub.Core) project and its usage that you can check out.
+of [PubSub.Core](src/PubSub.Core) project and its usage that you can check it out.
 
 ## Contributing
 
