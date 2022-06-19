@@ -22,7 +22,7 @@ public class SubscriberTests
         var dummy = new Dummy.Message();
         var subscriberGotTheMessage = false;
         Mock<Subscriber<Dummy.Message>> subscriberMock = new(_localEventBus) {CallBase = true};
-        subscriberMock.Setup(r => r.Notify(It.IsAny<Dummy.Message>()))
+        subscriberMock.Setup(r => r.Handle(It.IsAny<Dummy.Message>()))
             .Callback<Dummy.Message>(_ => { subscriberGotTheMessage = true; });
 
         // Act
@@ -42,7 +42,7 @@ public class SubscriberTests
         var dummy = new Dummy.Message();
         var subscriberGotTheMessage = false;
         Mock<Subscriber<Dummy.Message>> subscriberMock = new(_localEventBus) {CallBase = true};
-        subscriberMock.Setup(r => r.Notify(It.IsAny<Dummy.Message>()))
+        subscriberMock.Setup(r => r.Handle(It.IsAny<Dummy.Message>()))
             .Callback<Dummy.Message>(_ => { subscriberGotTheMessage = true; });
 
         // Act

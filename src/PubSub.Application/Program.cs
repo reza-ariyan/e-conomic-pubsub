@@ -20,7 +20,7 @@ var random = new Random();
 Console.WriteLine("Press any key to exit...");
 while (!Console.KeyAvailable)
 {
-    Thread.Sleep(500);
+    Thread.Sleep(800);
     var index = random.Next(0, stocks.Count);
     var stock = stocks[index];
     stock.Price = random.Next(100, 80000);

@@ -8,10 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased] - 2022-06-17
 
 ### Added
+
 - Ability to automatically subscribe to a message by using dependency injection
 - Unsubscription on disposing a subscriber (eg. due to connection loss)
 
+### Changed
+
+- Notify has been renamed to Handle
+
 ### Fixed
+
 - Notify action access modifier for subscriber has been changed to be able to write tests and be called separately
 
 ## [1.0.0] - 2022-06-17

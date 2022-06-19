@@ -38,7 +38,7 @@ reference [PubSub.Core](src/PubSub.Core), then create your models as described b
       {
       }
   
-      public override void Notify(PublicChatMessage message)
+      public override void Handle(PublicChatMessage message)
       {
           Console.WriteLine($"{message.From,-5} : {message.Body}");
       }
@@ -77,7 +77,7 @@ There is another easy way to subscribe to a message using `dependency injection`
       {
       }
   
-      public override void Notify(PublicChatMessage message)
+      public override void Handle(PublicChatMessage message)
       {
           Console.WriteLine($"{message.From,-5} : {message.Body}");
       }

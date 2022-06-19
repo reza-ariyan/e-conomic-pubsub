@@ -17,7 +17,7 @@ public class Dummy
         {
         }
 
-        public override void Notify(Message message)
+        public override void Handle(Message message)
         {
         }
     }

@@ -17,10 +17,8 @@ public class LocalEventBus : ILocalEventBus
         if (!_subscribers.ContainsKey(type)) return;
         var subscriptions =
             new List<Subscription<TMessage>>(_subscribers[type].Cast<Subscription<TMessage>>());
-        foreach (var subscription in subscriptions)
-        {
+        foreach (var subscription in subscriptions) 
             subscription.Action(message);
-        }
     }
 
     /// <inheritdoc />

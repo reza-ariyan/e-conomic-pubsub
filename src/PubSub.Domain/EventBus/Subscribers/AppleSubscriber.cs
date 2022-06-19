@@ -11,7 +11,7 @@ public class AppleSubscriber : Subscriber<Apple>, IAppleSubscriber
     {
     }
 
-    public override void Notify(Apple message)
+    public override void Handle(Apple message)
     {
         Console.WriteLine($"{message.Symbol,-5}-->{message.Name,7} new price is {message.Price}");
     }

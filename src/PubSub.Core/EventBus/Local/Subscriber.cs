@@ -17,15 +17,15 @@ public abstract class Subscriber<TMessage> : IDisposable
     /// <param name="localEventBus"><inheritdoc cref="ILocalEventBus"/></param>
     protected Subscriber(ILocalEventBus localEventBus)
     {
-        _subscription = localEventBus.Subscribe<TMessage>(Notify);
+        _subscription = localEventBus.Subscribe<TMessage>(Handle);
     }
 
     /// <summary>
-    /// Each subscriber should implement <see cref="Notify"/> to get notified about any arose messages 
+    /// Each subscriber should implement <see cref="Handle"/> to get notified about any arose messages 
     /// </summary>
-    /// <remarks>When you publish a message through a publisher, all subscribers will get notified and their <see cref="Notify"/> action will be called</remarks>
+    /// <remarks>When you publish a message through a publisher, all subscribers will get notified and their <see cref="Handle"/> action will be called</remarks>
     /// <param name="message"><typeparam name="TMessage"/> is the type of the message that is arisen or published</param>
-    public abstract void Notify(TMessage message);
+    public abstract void Handle(TMessage message);
 
     ///<inheritdoc/>
     void IDisposable.Dispose()
