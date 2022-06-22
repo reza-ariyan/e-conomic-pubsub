@@ -7,8 +7,8 @@ public class Dummy
 {
     public class Message
     {
-        public string From { get; set; }
-        public string Body { get; set; }
+        public string From { get; init; } = "Reza Ariyan";
+        public string Body { get; init; } = "Hello World.";
     }
 
     public class DummySubscriber : Subscriber<Message>

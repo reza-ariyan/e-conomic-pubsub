@@ -22,5 +22,5 @@ public class Ioc
         _serviceProvider.GetService<ILocalEventBus>();
     }
 
-    public T Resolve<T>() => _serviceProvider.GetService<T>();
+    public T Resolve<T>() => _serviceProvider.GetService<T>() ?? throw new InvalidOperationException();
 }

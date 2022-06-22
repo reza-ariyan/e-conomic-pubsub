@@ -17,7 +17,7 @@ public class LocalEventBus : ILocalEventBus
         if (!_subscribers.ContainsKey(type)) return;
         var subscriptions =
             new List<Subscription<TMessage>>(_subscribers[type].Cast<Subscription<TMessage>>());
-        foreach (var subscription in subscriptions) 
+        foreach (var subscription in subscriptions)
             subscription.Action(message);
     }
 
@@ -49,6 +49,6 @@ public class LocalEventBus : ILocalEventBus
     {
         var type = typeof(TMessage);
         // removes the subscriber if it exists
-        _subscribers[type]?.Remove(subscription);
+        _subscribers[type].Remove(subscription);
     }
 }

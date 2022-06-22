@@ -6,8 +6,8 @@ using PubSub.Domain.EventBus.Models;
 //DI simulation
 var ioc = new Ioc();
 
-var googleSubscriber = ioc.Resolve<IGoogleSubscriber>();
-var appleSubscriber = ioc.Resolve<IAppleSubscriber>();
+ioc.Resolve<IGoogleSubscriber>();
+ioc.Resolve<IAppleSubscriber>();
 
 // Line below creates a list of dummy messages
 var stocks = new List<dynamic> {new Apple(), new Google()};
